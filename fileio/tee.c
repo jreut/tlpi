@@ -8,11 +8,9 @@ int main(int argc, char* argv[])
 	char *progname = argv[0];
 	char buffer[MAX_READ + 1];
 	char *filename;
-	int fd;
-	int optionChar;
-	ssize_t numRead;
-	ssize_t numWritten;
-	int openFlags;
+	int fd, openFlags;
+	ssize_t numRead, numWritten;
+	char optionChar;
 	Boolean append = FALSE;
 
 	while ((optionChar = getopt(argc, argv, "a")) != -1) {
