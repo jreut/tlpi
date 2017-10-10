@@ -2,7 +2,7 @@ include ../Makefile.inc
 
 GEN_EXE = atomic_append bad_exclusive_open copy \
 	multi_descriptors seek_io t_readv t_truncate \
-	tee cp_holes append_and_seek dup_with_fcntl verify_dup_fd
+	tee cp_holes append_and_seek dup_with_fcntl verify_dup_fd readv_writev
 
 LINUX_EXE = large_file
 
