@@ -1,7 +1,20 @@
 version: '3'
 services:
-        main:
-                build: .
-                volumes:
-                - .:/src
-                working_dir: /src
+  gnu:
+    build:
+      context: .
+      dockerfile: Dockerfile.glibc
+    volumes:
+    - .:/src
+    working_dir: /src
+    entrypoint: /bin/bash
+  musl: &default
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+    - .:/src
+    working_dir: /src
+    entrypoint: /bin/sh
+  default:
+    <<: *default
